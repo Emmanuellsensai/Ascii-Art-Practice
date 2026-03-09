@@ -15,7 +15,7 @@ func main() {
 
 	input := os.Args[1]
 
-	bannerLines, err := ascii.ReadBanner("thinkertoy.txt")
+	bannerLines, err := ascii.ReadBanner("standard.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
