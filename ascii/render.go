@@ -21,7 +21,7 @@ func BuildAsciiMap(lines []string) map[rune][]string {
 
 	char := 32
 
-	for i := 0; i < len(lines); i += 9 {
+	for i := 1; i < len(lines); i += 9 {
 		asciiMap[rune(char)] = lines[i : i+8]
 		char++
 	}
@@ -33,10 +33,12 @@ func PrintAscii(text string, asciiMap map[rune][]string) {
 
 	lines := strings.Split(text, "\\n")
 
-	for _, line := range lines {
+	for i, line := range lines {
 
 		if line == "" {
-			fmt.Println()
+			if i != 0 {
+				fmt.Println()
+			}
 			continue
 		}
 
